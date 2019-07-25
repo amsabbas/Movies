@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Thiqah Posts</string>
+
+    <string name="post_title_hint">Title...</string>
+
+    <string name="post_desc_hint">Desc...</string>
+
+</resources>
