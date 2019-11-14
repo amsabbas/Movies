@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           xmlns:tools="http://schemas.android.com/tools"
-          package="com.thiqah.posts">
+          package="com.thiqah.movies">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -12,10 +12,11 @@
             android:label="@string/app_name"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="false"
-            android:name="com.thiqah.posts.application.ThiqahApplication"
-            tools:replace="supportsRtl"
+            android:appComponentFactory="whateverString"
+            android:name="com.thiqah.movies.application.ThiqahApplication"
+            tools:replace="android:supportsRtl,android:appComponentFactory"
             android:theme="@style/AppTheme">
-        <activity android:name=".presentation.view.activity.PostsActivity"
+        <activity android:name="com.thiqah.movies.presentation.view.activity.MoviesActivity"
                   android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -23,9 +24,9 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".presentation.view.activity.PostDetailActivity"
-                  android:screenOrientation="portrait">
-        </activity>
+        <activity android:name="com.thiqah.movies.presentation.view.activity.MovieDetailActivity"
+                  android:screenOrientation="portrait"/>
+
     </application>
 
 </manifest>
