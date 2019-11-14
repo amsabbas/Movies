@@ -3,9 +3,8 @@
 Android Sample App written in Kotlin
 
 - AndroidX
-- Koin
 - Clean Architecture.
-- Dependency Injection by Dagger.
+- Dependency Injection by Koin.
 - Room
 - MVVM
 - Unit Tests for room.
