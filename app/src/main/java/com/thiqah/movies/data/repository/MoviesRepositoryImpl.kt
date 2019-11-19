@@ -23,8 +23,7 @@ class MoviesRepositoryImpl constructor(
         return moviesLocalDataSource.getMovies()
     }
 
-    override fun insertMovies(post: List<Movie>): Observable<Boolean> {
-        return moviesLocalDataSource.insertMovie(post)
+    override suspend fun insertMovies(post: List<Movie>) {
+         moviesLocalDataSource.insertMovie(post)
     }
-
 }

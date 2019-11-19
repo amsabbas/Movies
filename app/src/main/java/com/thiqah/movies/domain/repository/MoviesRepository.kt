@@ -10,6 +10,6 @@ interface MoviesRepository {
 
     fun getLocalMovies(): Single<List<Movie>>
 
-    fun insertMovies(post: List<Movie>): Observable<Boolean>
+    suspend fun insertMovies(post: List<Movie>)
 
 }

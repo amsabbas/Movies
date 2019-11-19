@@ -20,7 +20,7 @@ interface MoviesDao {
     fun deleteAllMovies()
 
     @Transaction
-    fun refreshPosts(posts: List<Movie>) {
+    suspend fun refreshPosts(posts: List<Movie>) {
         deleteAllMovies()
         insertMovie(posts)
     }

@@ -15,7 +15,7 @@ class GetMoviesUseCase  constructor(private val moviesRepository: MoviesReposito
         return moviesRepository.getLocalMovies()
     }
 
-    fun insertMovies(movies: List<Movie>): Observable<Boolean> {
-        return moviesRepository.insertMovies(movies)
+    suspend fun insertMovies(movies: List<Movie>) {
+         moviesRepository.insertMovies(movies)
     }
 }

@@ -93,26 +93,4 @@ class MoviesRepoUnitTest {
     }
 
 
-    @Test
-    fun testInsertMoviesSuccess() {
-
-        val movie1 = Movie(1, "title1", "body1")
-        val movie2 = Movie(2, "title2", "body2")
-
-        val movies = ArrayList<Movie>()
-        movies.add(movie1)
-        movies.add(movie2)
-
-        //given
-        whenever(repo.insertMovies(movies))
-            .thenReturn(Observable.just(true))
-
-        // call
-        val repoTest = repo.insertMovies(movies)
-
-        // then
-        Assert.assertEquals(true, repoTest.blockingSingle())
-    }
-
-
 }

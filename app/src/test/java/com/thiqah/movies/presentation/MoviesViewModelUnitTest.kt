@@ -2,14 +2,13 @@ package com.thiqah.movies.presentation
 
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.me.presentation.RxSchedulersOverrideRule
 import com.nhaarman.mockitokotlin2.whenever
+import com.thiqah.movies.base.RxSchedulersOverrideRule
 import com.thiqah.movies.data.source.remote.model.post.Movie
 import com.thiqah.movies.domain.interactor.GetMoviesUseCase
 import com.thiqah.movies.presentation.viewmodel.MoviesViewModel
 import io.reactivex.Observable
 import org.junit.*
-import org.junit.rules.TestRule
 import org.junit.runner.RunWith
 import org.junit.runners.JUnit4
 import org.mockito.Mock
@@ -35,7 +34,7 @@ class MoviesViewModelUnitTest {
 
     @Rule
     @JvmField
-    val instantTaskExecutorRule: TestRule = InstantTaskExecutorRule() //needed to mock rx
+    val instantTaskExecutorRule: InstantTaskExecutorRule  = InstantTaskExecutorRule() //needed to mock rx
 
     @Before
     fun setUp() {
