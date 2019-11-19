@@ -1,15 +1,15 @@
 package com.thiqah.movies
 
-import androidx.room.Room
 import android.content.Context
+import androidx.room.Room
+import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import com.thiqah.movies.core.db.ThiqahDatabase
 import com.thiqah.movies.data.source.local.model.MoviesDao
 import com.thiqah.movies.data.source.remote.model.post.Movie
 import org.junit.After
-import org.junit.Test
-
 import org.junit.Before
+import org.junit.Test
 import org.junit.runner.RunWith
 import javax.inject.Inject
 
@@ -18,7 +18,7 @@ import javax.inject.Inject
  *
  * See [testing documentation](http://d.android.com/tools/testing).
  */
-@RunWith(androidx.test.ext.junit.runners.AndroidJUnit4::class)
+@RunWith(AndroidJUnit4::class)
 class RoomUnitTest {
 
     @Inject

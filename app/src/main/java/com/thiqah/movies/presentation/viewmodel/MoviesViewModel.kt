@@ -5,7 +5,6 @@ import com.thiqah.movies.data.source.remote.model.post.Movie
 import com.thiqah.movies.domain.interactor.GetMoviesUseCase
 import com.thiqah.movies.presentation.model.BaseViewModel
 import com.thiqah.movies.presentation.model.ObservableResourceMObservers
-import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -26,17 +25,16 @@ class MoviesViewModel constructor(
             getMoviesUseCase.getMovies()
                 .subscribeOn(Schedulers.io())
                 .doOnSubscribe { moviesObservableResource.loading.postValue(true) }
-                .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({
                     it?.let {
                         if (it.isNotEmpty())
                             saveMovies(it)
                     }
-                    moviesObservableResource.value = it
-                    moviesObservableResource.loading.value = false
+                    moviesObservableResource.postValue(it)
+                    moviesObservableResource.loading.postValue (false)
                 }, {
-                    moviesObservableResource.loading.value = false
-                    moviesObservableResource.error.value = it as ThiqahException?
+                    moviesObservableResource.loading.postValue(false)
+                    moviesObservableResource.error.postValue(it as ThiqahException?)
                 })
         )
 
@@ -50,12 +48,11 @@ class MoviesViewModel constructor(
             getMoviesUseCase.getLocalMovies()
                 .subscribeOn(Schedulers.io())
                 .doOnSubscribe { localMoviesObservableResource.loading.postValue(true) }
-                .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({
-                    localMoviesObservableResource.value = it
-                    localMoviesObservableResource.loading.value = false
+                    localMoviesObservableResource.postValue(it)
+                    localMoviesObservableResource.loading.postValue( false)
                 }, {
-                    localMoviesObservableResource.loading.value = false
+                    localMoviesObservableResource.loading.postValue( false)
                 })
         )
 
