@@ -8,5 +8,5 @@ Android Sample App written in Kotlin
 - Dependency Injection by Koin.
 - Room.
 - MVVM.
-- Unit Tests for room.
+- Unit Tests.
 
